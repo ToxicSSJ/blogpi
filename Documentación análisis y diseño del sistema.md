@@ -1,49 +1,31 @@
-```
-Proyecto 2
-```
-```
-Documentación análisis y diseño del sistema
-```
-```
-Abraham Miguel Lora Vargas
-```
-```
-amlorav@eafit.edu.co
-```
-```
-Mario Alejandro Muñetón Durango
-```
-```
-mamunetond@eafit.edu.co
-```
-```
-Grupo 001
-```
-```
-Universidad EAFIT
-```
-```
-Departamento de informática y sistemas
-```
-ST0263-001 Tópicos especiales en telemática
+## **Proyecto 2**
 
-```
-Medellín
-```
+Documentación análisis y diseño del sistema
+
+ - Abraham Miguel Lora Vargas (amlorav@eafit.edu.co)
+ - Mario Alejandro Muñetón Durango mamunetond@eafit.edu.co
+
+Grupo 001
+Universidad EAFIT
+Departamento de informática y sistema
+ST0263-001 Tópicos especiales en telemática
+*Medellín*
 
 ## Tabla de contenidos:
 
- - 1. Desarrollo del proyecto 1. Asignación de roles y responsabilidades de cada integrante del equipo en el
-- 1.1. Roles
-- 1.2. Responsabilidades
+ - 1. Desarrollo del proyecto 
+   - 1.0. Asignación de roles y responsabilidades de cada integrante del equipo en el
+   - 1.1. Roles
+   - 1.2. Responsabilidades
 - 2. GitHub del proyecto
 - 3. Especificaciones de requisitos no funcionales
 - 4. Atributos de calidad
 - 5. Diseño para la escalabilidad (disponibilidad, rendimiento, seguridad)
 - 6. Referencias bibliográficas
 
+---
 
-1. Asignación de roles y responsabilidades de cada integrante del equipo
+1.0 Asignación de roles y responsabilidades de cada integrante del equipo
     en el desarrollo del proyecto:
 
 ## 1.1. Roles
@@ -97,8 +79,7 @@ Enlace del proyecto 2: https://github.com/ToxicSSJ/blogpi
 
 ## 3. Especificaciones de requisitos no funcionales
 
-```
-a) Disponibilidad: Nuestra CMS cuenta con una alta disponibilidad en la capa
+**a) Disponibilidad:** Nuestra CMS cuenta con una alta disponibilidad en la capa
 de servicios, es decir, es capaz de garantizar la continuidad de los servicios,
 incluso en situaciones donde se presenten fallas, tiene una arquitectura de
 diseño que replica el almacenamiento de Host y Networking, eliminando
@@ -112,9 +93,8 @@ el manejo de archivos, se hace una replicación multirregional de la Database
 en otra región, de esta manera, sí alguien desea subir archivos al portal web,
 otra persona que se encuentre ubicado en una región diferente pueda
 visualizar los cambios que hizo la otra persona.
-```
 
-b) Rendimiento: El rendimiento es la medición objetiva y la experiencia
+**b) Rendimiento:** El rendimiento es la medición objetiva y la experiencia
 percibida por el usuario del tiempo de carga y de ejecución. El rendimiento
 web es el tiempo que tarda un sitio en cargarse, en ser interactivo y receptivo,
 y en el grado de fluidez del contenido durante las interacciones de usuario,
@@ -124,7 +104,7 @@ contenido. El diseño de la solución plantea minimizar los tiempos de carga y
 respuesta entre 1 y 2 segundos como máximo, y agregar funciones
 adicionales para ocultar la latencia.
 
-c) Seguridad: La seguridad web implica invertir en acciones y soluciones
+**c) Seguridad:** La seguridad web implica invertir en acciones y soluciones
 centradas en garantizar la protección de datos. Para lograr este objetivo, es
 necesario mantener WordPress actualizado, usar contraseñas seguras,
 configurar perfiles de usuarios, hacer backup de seguridad y autenticación
@@ -135,36 +115,35 @@ certificado SSL.
 
 ## 4. Atributos de calidad
 
-a) Idoneidad: Capacidad del producto software para proporcionar un conjunto
+**a) Idoneidad:** Capacidad del producto software para proporcionar un conjunto
 apropiado de funciones para tareas y objetivos de usuario especificado. En
 nuestro caso consultar los proyectos de las materias de Proyecto Integrador
 1 y 2 para el programa de ingeniería de sistemas de la Universidad EAFIT
 
-b) Tolerancia a fallos: Capacidad del software para mantener un nivel
+**b) Tolerancia a fallos:** Capacidad del software para mantener un nivel
 especificado de prestaciones en cada fallo de software o de infringir sus
 interfaces especificados.
 
-
-c) Inteligibilidad: Capacidad del producto software que permite al usuario
+**c) Inteligibilidad:** Capacidad del producto software que permite al usuario
 entender si el software es adecuado y como puede ser usado para unas
 tareas o condiciones de uso en particular. Los estudiantes comprenden como
 usar la CMS, para consultar el proyecto que deseen acceder.
 
-d) Utilización de recursos: Capacidad del producto software para usar las
+**d) Utilización de recursos:** Capacidad del producto software para usar las
 cantidades y tipos de recursos adecuados cuando el software lleva a cabo
 su función bajo condiciones determinadas
 
-e) Adaptabilidad: Capacidad del producto software para ser adaptado a
+**e) Adaptabilidad:** Capacidad del producto software para ser adaptado a
 diferentes entornos especificados, sin aplicar acciones o mecanismos
 distintos de aquellos proporcionados para este propósito por el propio
 software considerado.
 
-
 ## 5. Diseño para la escalabilidad (disponibilidad, rendimiento, seguridad)
 
-Figura 1. Diseño de la solución planteada, elaborado en diagrams.net usando una
+> Figura 1. Diseño de la solución planteada, elaborado en diagrams.net usando una
 plantilla preestablecida de Google Cloud Platform (GCP).
 
+![Figura 1](https://i.imgur.com/3quxHkd.png)
 
 El diseño de la solución fue planteado para un sistema de 20.000 usuarios, con un
 nivel de concurrencia del 10 %, almacenamiento total de 500 GB, y permite el tráfico
@@ -185,13 +164,10 @@ balanceador de carga interno que distribuye las peticiones al conjunto de
 trabajadores, se tiene un total de 10 trabajadores, ya que mediante la ley de Little
 se determinó:
 
-L = λ * W
-
- 10 = 200 * W
-
- W = 10/
-
-W = 0,05 s
+    L = λ * W
+    10 = 200 * W
+    W = 10/
+    W = 0,05 s
 
 Si tengo 10 trabajadores y cada uno recibe 200 peticiones por segundo, obtengo un
 tiempo de 0,05 segundos.
@@ -218,8 +194,9 @@ solicitud independiente de la otra, reducir la adherencia de la sesión para ayu
 los balanceadores de carga, separar la aplicación por servicios ubicados en
 diferentes servidores (escalabilidad funcional)
 
+---
 
-Referencias bibliográficas:
+**Referencias bibliográficas:**
 
 1. ¿Qué es alta disponibilidad? Retomado de:
     https://www.blockbit.com/es/blog/que-es-alta-disponibilidad/
